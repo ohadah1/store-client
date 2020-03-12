@@ -1,0 +1,15 @@
+#!/bin/bash
+sudo yum install -y nginx 
+sudo yum install -y npm
+sudo yum install -y nodejs.x86_64
+sudo npm install --prefix /home/ec2-user/store/client/
+sudo alias ng="/home/ec2-user/store/client/node_modules/@angular/cli/bin/ng"
+sudo npm run --prefix /home/ec2-user/store/client/ build
+sudo npm install /home/ec2-user/store/server/
+sudo rm -rf /usr/share/nginx/html/.
+sudo cp -R /home/ec2-user/store/client/dist/new-app/* /usr/share/nginx/html/
+sudo chmod -R 644 /usr/share/nginx/html/*
+sudo chcon -R -u system_u -r object_r -t httpd_sys_content_t /usr/share/nginx/html/*
+sudo systemctl enable nginx
+sudo systemctl start nginx
+sudo node /home/ec2-user/store/server/src/app.js &
