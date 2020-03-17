@@ -29,7 +29,8 @@ var con = mysql.createConnection({
     host: "storeclientdb.cfk3d5jggu5e.us-east-1.rds.amazonaws.com",
     user: "admin",
     password: "Aa123456",
-    database: "storeClientDB"
+    database: "storeClientDB",
+    schema: "storeClientDB"
 });
 
 con.connect(function(err) {
