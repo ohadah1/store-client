@@ -9,20 +9,20 @@ export class ProductsDataService {
   }
 
   public all(): Observable<any> {
-    return this.http.get('master-lb-1210004499.us-east-1.elb.amazonaws.com:3000/product', {responseType: 'json'});
+    return this.http.get('http://strore-lb-439c1c049323e3b1.elb.us-east-1.amazonaws.com:3000/product', {responseType: 'json'});
   }
 
   public delete(id: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'content-type':  'application/json',
+        'content-type': 'application/json',
         responseType: 'json'
       }),
     };
-    return this.http.post('master-lb-1210004499.us-east-1.elb.amazonaws.com:3000/product/delete', {id}, {responseType: 'json'});
+    return this.http.post('http://strore-lb-439c1c049323e3b1.elb.us-east-1.amazonaws.com:3000/product/delete', {id}, {responseType: 'json'});
   }
 
   public save(product: Product): Observable<any> {
-    return this.http.post('master-lb-1210004499.us-east-1.elb.amazonaws.com:3000/product', product, {responseType: 'json'});
+    return this.http.post('http://strore-lb-439c1c049323e3b1.elb.us-east-1.amazonaws.com:3000/product', product, {responseType: 'json'});
   }
 }

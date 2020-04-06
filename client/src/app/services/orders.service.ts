@@ -8,7 +8,7 @@ export class OrdersService {
   }
 
   public getAllOrders() {
-    return this.http.get('master-lb-1210004499.us-east-1.elb.amazonaws.com:3000/order', {responseType: 'json'})
+    return this.http.get('http://strore-lb-439c1c049323e3b1.elb.us-east-1.amazonaws.com:3000/order', {responseType: 'json'})
   }
 
   public newOrder(): void {
@@ -17,7 +17,7 @@ export class OrdersService {
         'content-type':  'application/json',
       })
     };
-    this.http.post('master-lb-1210004499.us-east-1.elb.amazonaws.com:3000/order', {responseType: 'json'}, httpOptions).subscribe(orders => {
+    this.http.post('http://strore-lb-439c1c049323e3b1.elb.us-east-1.amazonaws.com:3000/order', {responseType: 'json'}, httpOptions).subscribe(orders => {
       this.orders = orders;
     });
   }
