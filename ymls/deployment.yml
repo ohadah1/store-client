@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: fungroup10/store:v1
+          image: fungroup10/store:v2
           ports:
             - containerPort: 3000

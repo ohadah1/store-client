@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: store-client
-          image: fungroup10/store-client:v1
+          image: fungroup10/store-client:v2
           imagePullPolicy: Always
           ports:
             - containerPort: 80
