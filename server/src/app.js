@@ -26,7 +26,7 @@ app.use(function (req, res, next) {
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: "storeclientdb.cala6uvyezje.us-east-1.rds.amazonaws.com",
+    host: "storeclientdb.cfk3d5jggu5e.us-east-1.rds.amazonaws.com",
     user: "admin",
     password: "Aa123456",
     database: "storeClientDB",
@@ -51,7 +51,7 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     // res.send('Hello World!')
-    console.log("ohad");
+    console.log("omri");
     res.status(200).send("hello")
 });
 
